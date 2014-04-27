@@ -54,8 +54,9 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+   $primary-color: #29ABE2;
 // $secondary-color: #e7e7e7;
+   $secondary-color: #777;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -121,7 +122,7 @@
 // $header-font-family: $body-font-family;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-   $header-font-color: #888;
+   $header-font-color: $secondary-color;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -130,6 +131,7 @@
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
 // $h2-font-size: rem-calc(37);
+   $h2-font-size: rem-calc(32);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
@@ -327,6 +329,7 @@
 // $button-tny: rem-calc(10);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);
+   $button-med: rem-calc(12);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.
