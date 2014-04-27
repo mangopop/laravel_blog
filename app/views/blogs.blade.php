@@ -3,14 +3,14 @@
 
 <!--title / copy / id array items-->	
 	@if(isset($title))
-		<h1>{{ $title }}</h1>
-		<p>{{ $copy }}</p>
+		<h1>{{{ $title }}}</h1>
+		<p>{{{ $copy }}}</p>
 		
 		<!--delete form-->
 		@if( Auth::check() )
 		<form action="{{ url ('/delete') }}" method="post" accept-charset="utf-8">
 			<p><input type="submit" class="button" value="Delete"></p>
-			<input type="hidden" value="{{$id}}" name="id"/>
+			<input type="hidden" value="{{{$id}}}" name="id"/>
 			<!--can delete like this. Can't remember the benefit thinks it's a restful thing-->
 			<!--<input name="_method" type="hidden" value="DELETE">-->
 		</form>
@@ -20,9 +20,9 @@
 		@if( Auth::check() )
 		<form action="{{ url ('/edit_form') }}" method="POST" accept-charset="utf-8">
 			<p><input type="submit" class="button" value="Edit"></p>
-			<input type="hidden" value="{{$id}}" name="id"/>
-			<input type="hidden" value="{{$title}}" name="title"/>
-			<input type="hidden" value="{{$copy}}" name="content"/>
+			<input type="hidden" value="{{{$id}}}" name="id"/>
+			<input type="hidden" value="{{{$title}}}" name="title"/>
+			<input type="hidden" value="{{{$copy}}}" name="content"/>
 			<!--can delete like this. Can't remember the benefit thinks it's a restful thing-->
 			<!--<input name="_method" type="hidden" value="DELETE">-->
 		</form>

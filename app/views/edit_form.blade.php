@@ -35,7 +35,7 @@ draft
 		<textarea type="textarea" name="content">{{{$data['content']}}}</textarea>
 	</label>
 	</br>
-	
+	{{ Form::token() }}
 	<input type="submit" class="button" value="Save" />
 
 </form>
