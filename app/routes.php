@@ -184,7 +184,7 @@ SEARCH
 
 Route::post('search', function()
 {
-	return $search = e(Input::get('search'));	
+	$search = Input::get('search');	
 	
 	//returned (this is important as returned will return things it's own way)
 	//this will return all columns, I just need title.
