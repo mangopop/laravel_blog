@@ -3,20 +3,35 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Foundation</title>
+	<title>Blog</title>
 	<link rel="stylesheet" href="/laravel_stuff/laravel_blog/public/stylesheets/app.css" />
 	<script src="/laravel_stuff/laravel_blog/public/bower_components/modernizr/modernizr.js"></script>
 </head>
 
 <body>
-	<div class="row">
-		<div class="small-12 columns">
-			<h1>blog</h1>
+	<div class="row top">
+		
+		<div class="small-12 medium-3 columns">
+			<h1>@{{ blog }}</h1>
+			<h5>Coding tagline</h5>
 			@if (Session::get('message'))
 			<div>
 				{{session::get('message')}}
 			</div>
 			@endif
+		</div>
+
+		<div class="small-12 medium-3 right columns">
+			<form class="search" action="{{url('search')}}" method="POST" accept-charset="utf-8">
+				<input type="text" class="input" placeholder="search blog" name="search"/>
+				<input class="button round tiny right" type="submit" value="Go"/>
+			</form>
+		</div>
+
+	</div><!--end row--> 
+
+	<div class="row">
+		<nav class="small-12 medium-3 columns">
 			<ul>
 				<!--using hand written url causes issues-->
 				<li><a href="{{url('blogs')}}">Blogs</a></li>
@@ -25,17 +40,8 @@
 				<li><a href="{{url('logout')}}">logout</a></li>
 				@endif
 			</ul>
-		</div>
-	</div><!--end row--> 
+		</nav>
 
-	<div class="row">
-		<div class="small-12 medium-3 columns">
-			<h4>Search blogs</h4>
-			<form action="{{url('search')}}" method="POST" accept-charset="utf-8">
-				<input type="text" placeholder="search blog" name="search"/>
-				<input class="button" type="submit" value="Find"/>
-			</form>
-		</div>
 		
 		<div class="small-12 medium-6 columns">
 			@yield('content')

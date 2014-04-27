@@ -11,14 +11,19 @@ draft
 <h4>Create blog entry</h4>
 
 <form action= "/laravel_stuff/laravel_blog/public/blogs" method="POST">
-	<label>title:
+	<label>Title:
 		<input type="text" name="title" />
 	</label>
 
-	<label>content
-		<input type="text" name="content" />
+	<label>Content:
+		<textarea rows="7" name="content"></textarea>
 	</label>
-		<input name="draft_check" id="draft_check" type="checkbox"><label for="checkbox1">Draft</label>
+	
+	<label>Summary:
+		<input type="text" name="summary" />
+	</label>
+	
+		<input name="draft_check" id="draft_check" checked="true" type="checkbox"><label for="checkbox1">Draft</label>
 
 		<input type="submit" class="button radius" value="Create" />
 		{{ Form::token() }}

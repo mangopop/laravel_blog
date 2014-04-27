@@ -1,6 +1,53 @@
 @import "settings";
 @import "foundation";
 
+body{
+	border-top:10px solid $primary-color;
+}
+
+/*nav{
+	position:relative;
+	margin-top:40px;
+}
+
+nav ul{
+	margin-left:0;
+}
+*/
+
+nav ul li{
+	//right:20px;
+	//top:20px;
+	list-style-type:none;
+	//display:inline;
+	//float:left;
+	text-indent:0;
+}
+
+
+.top{
+	margin-top:20px;
+	margin-bottom:40px;
+}
+h1{
+	font-weight:bold;
+}
+h1 span{
+	font-weight:normal;
+}
+
+h2{
+	color:#222;
+	font-weight:bold;
+}
+
+form.search input[type="text"]{
+	display:inline;
+	width:70%;
+}
+
+
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",

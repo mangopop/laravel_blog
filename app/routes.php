@@ -121,7 +121,8 @@ Route::post('blogs', array('before' => 'csrf', function()
 	$entry = New Blog;
     $entry->title = Input::get('title');
     $entry->copy = Input::get('content');
-	$entry->draft = Input::get('draft_check', '0');	
+    $entry->copy = Input::get('summary');
+	$entry->draft = Input::get('draft_check', '1');	
 	$entry->save();
 	//return a make view didn't work???
 	return Redirect::to('blogs');
@@ -131,7 +132,8 @@ Route::post('blogs', array('before' => 'csrf', function()
 //read
 Route::get('blogs/{id?}', function($id = null)
 {
-
+	
+	//if we have an id show single blog
 	if($id !== null){
 		//want to display title and copy that matches id
 		//could pass ID and BLOGS over and use it to get title and copy
@@ -141,6 +143,8 @@ Route::get('blogs/{id?}', function($id = null)
 		$id = Blog::find($id)->id;
 		return View::make('blogs', array('title' => $title, 'copy' => $copy, 'id' => $id));
 	}
+	
+	//if the id is empty show all blogs
 	
 	//this is an array
     $blogs = Blog::all();

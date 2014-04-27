@@ -4,7 +4,7 @@ $(document).foundation();
 
 $(document).ready(function() {
 	$('#draft_check').change(function(){
-	     $(this).val(this.checked ? 1 : 0);
+	     $(this).val(this.checked ? 0 : 1);
 		console.log($(this).val());
 	});
 });
