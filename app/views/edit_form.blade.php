@@ -14,16 +14,16 @@ draft
 
 <form action= "/laravel_stuff/laravel_blog/public/edit/{{$data['id']}}" method="POST">
 	
-	<label>title:
+	<label>Title:
 		<input type="text" name="title" value="{{$data['title']}}"/>
 	</label></br>
-	<label>content:
-		<textarea rows="5" columns="50" type="textarea" name="content">{{$data['content']}}</textarea>
+	<label>Content:
+		<textarea rows="10" columns="50" type="textarea" name="content">{{$data['content']}}</textarea>
 	</label>
 	</br>
 	<input name="draft_check" type="checkbox"><label for="checkbox1">Draft</label>
 	
-	<input type="submit" class="button" value="Edit" />
+	<input type="submit" class="button" value="Save" />
 
 </form>
  

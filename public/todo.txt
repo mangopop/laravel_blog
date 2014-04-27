@@ -1,0 +1,19 @@
+///// Priority //////
+CSF protection http://laravel.com/docs/security#protecting-routes
+send and validate
+
+
+////// to do ////////
+
+pagination
+categorisation
+validation
+	search - not done
+	edit ??
+	create ??
+	login - part done
+	
+///// DONE //////
+sql injection protection (bakde in using PDO binding / research)
+escape output with triple braces
+search - blog page.
