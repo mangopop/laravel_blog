@@ -1,6 +1,7 @@
 ///// Priority //////
 CSF protection http://laravel.com/docs/security#protecting-routes
-send and validate
+	we can just add {{ Form::token() }}
+	Route::post('/handle-form', array('before' => 'csrf', function()
 
 
 ////// to do ////////

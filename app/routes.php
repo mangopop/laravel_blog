@@ -110,21 +110,23 @@ CRUD routes
 *************/
 
 //CREATE and display blogs
-Route::post('blogs', function()
+Route::post('blogs', array('before' => 'csrf', function()
 {
 	//this is an array
-    $data = Input::all();
-	//var_dump($data);
+    //$data = Input::all();
+	
+	//use isset if to check if checkbox has been set and provide default value if not
+	//or use laravel default shortcut
 
 	$entry = New Blog;
-    $entry->title = $data['title'];
-    $entry->copy = $data['content'];
-	$entry->draft = $data['draft_check'];
+    $entry->title = Input::get('title');
+    $entry->copy = Input::get('content');
+	$entry->draft = Input::get('draft_check', '0');	
 	$entry->save();
 	//return a make view didn't work???
 	return Redirect::to('blogs');
 
-});
+}));
 
 //read
 Route::get('blogs/{id?}', function($id = null)
@@ -150,7 +152,7 @@ Route::get('blogs/{id?}', function($id = null)
 //update edit with form details 
 //POST recieve: $title $content
 //RESTfull recieve: $id
-Route::POST('edit/{id}', function($id)
+Route::POST('edit/{id}', array('before' => 'csrf', function($id)
 {
 	$title = Input::get('title');
 	$content = Input::get('content');
@@ -164,7 +166,7 @@ Route::POST('edit/{id}', function($id)
 	
 	return Redirect::to('blogs');
 	//update() is used on a where clause only?	
-});
+}));
 
 
 //post with delete doesn't work, general post does though?

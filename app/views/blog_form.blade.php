@@ -18,9 +18,10 @@ draft
 	<label>content
 		<input type="text" name="content" />
 	</label>
-		<input name="draft_check" value="1" type="checkbox"><label for="checkbox1">Draft</label>
-		<input type="submit" class="button radius" value="Create" />
+		<input name="draft_check" id="draft_check" type="checkbox"><label for="checkbox1">Draft</label>
 
+		<input type="submit" class="button radius" value="Create" />
+		{{ Form::token() }}
 </form>
  
 @stop
